@@ -1,4 +1,3 @@
-from keep_alive import keep_alive
 import discord
 from discord.ext import commands
 from discord import app_commands
@@ -296,7 +295,6 @@ async def ping(interaction: discord.Interaction):
     await interaction.edit_original_response(content=f":ping_pong: Pong! 你的延迟为 {latency:.2f} 毫秒。")
     logging.info(f'[/ping] 测试结束，@{username}的ping值为{latency:.2f}毫秒(ms)')
 # 启动机器人
-keep_alive()
 import os
 secret_key = os.getenv('bot_key')
 client.run(secret_key)

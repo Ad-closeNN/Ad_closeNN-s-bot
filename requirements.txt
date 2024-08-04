@@ -1,0 +1,1 @@
+pip install sparkdesk-api websocket-client discord.py pyhandytools
