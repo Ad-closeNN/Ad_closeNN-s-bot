@@ -1,4 +1,4 @@
-name: Ping GitHub Codespace per 5 minutes
+name: Ping GitHub Codespace per 15 minutes
 
 on:
   schedule:
@@ -9,18 +9,6 @@ jobs:
   keep-alive:
     runs-on: ubuntu-latest
     steps:
-    - name: Ping GitHub Codespace per 5 minutes
+    - name: Ping GitHub Codespace per 15 minutes
       run: |
-        curl -I https://literate-enigma-gvvv4v4j44v3p57.github.dev/
-    - name: Create a GitHub Release
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const { data: release } = await github.rest.repos.createRelease({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            tag_name: `ping-${new Date().toISOString()}`,
-            name: `Ping Release ${new Date().toISOString()}`,
-            body: 'This release was created to keep the Codespace active.',
-          });
-          console.log(`Release created: ${release.html_url}`);
+        curl -IL https://literate-enigma-gvvv4v4j44v3p57.github.dev
