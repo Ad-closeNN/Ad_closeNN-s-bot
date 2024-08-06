@@ -11,4 +11,4 @@ jobs:
     steps:
     - name: Ping GitHub Codespace per 5 minutes
       run: |
-        curl -I https://<YOUR_CODESPACE_URL>
+        curl -I https://literate-enigma-gvvv4v4j44v3p57.github.dev/
