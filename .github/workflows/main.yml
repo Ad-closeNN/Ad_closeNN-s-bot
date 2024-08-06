@@ -1,0 +1,14 @@
+name: Ping GitHub Codespace per 5 minutes
+
+on:
+  schedule:
+    # 每 5 分钟触发一次，保持 Codespace 活跃
+    - cron: '*/5 * * * *'
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Ping GitHub Codespace per 5 minutes
+      run: |
+        curl -I https://<YOUR_CODESPACE_URL>
